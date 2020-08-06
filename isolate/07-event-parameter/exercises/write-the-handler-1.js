@@ -1,19 +1,21 @@
 'use strict';
 
-
 const buttonEl = document.createElement('button');
 buttonEl.innerHTML = '12345';
 console.log('initial button:', buttonEl.cloneNode(true));
 
-
 const reverseInnerHTMLHandler = (event) => {
   // write code to reverse the target element's innerHTML
+  const initialInnerHtml = event.target.innerHTML;
+  const convertArray = Array.from(initialInnerHtml).reverse().join('');
+  event.target.innerHTML = convertArray;
 
-
+  //  //the reverse can be done also in this way
+  //  const reverseInnerHtml = initialInnerHtml.split('').reverse().join('');
+  //  event.target.innerHTML = reverseInnerHtml;
 };
 
 buttonEl.addEventListener('click', reverseInnerHTMLHandler);
-
 
 // "click" the button once
 const clickEvent1 = new Event('click');

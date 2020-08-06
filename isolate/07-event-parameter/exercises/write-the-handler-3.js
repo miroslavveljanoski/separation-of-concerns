@@ -5,18 +5,19 @@
 // https://stackoverflow.com/a/8206578
 
 const inputEl = document.createElement('input');
-inputEl.type = 'checkbox';
+//inputEl.type = 'checkbox';
 console.log('initial input:', inputEl.cloneNode(true));
-
 
 const toggleCheckedHandler = (event) => {
   // write code to reverse the boolean .checked value on the target element
+  event.target.checked = !event.target.checked;
 
-
+  // //this can be solved also in this way
+  // const targetChecked = event.target.checked;
+  // event.target.checked = targetChecked ? false : true;
 };
 
 inputEl.addEventListener('click', toggleCheckedHandler);
-
 
 // "click" the button once
 const clickEvent1 = new Event('click');

@@ -14,10 +14,21 @@ divEl.innerHTML = `
 console.log(divEl.nodeName + ' (before)', divEl.cloneNode(true));
 
 // --- write some code ---
+const tdOne = document.createElement('td');
+divEl.children[0].children[0].children[0].appendChild(tdOne);
+divEl.children[0].children[0].children[0].children[0].innerHTML = 'a';
 
+const tdTwo = document.createElement('td');
+divEl.children[0].children[0].children[0].appendChild(tdTwo);
+divEl.children[0].children[0].children[0].children[1].innerHTML = 'b';
 
+const tdThree = document.createElement('td');
+divEl.children[0].children[0].children[1].appendChild(tdThree);
+divEl.children[0].children[0].children[1].children[0].innerHTML = 'c';
 
-
+const tdFour = document.createElement('td');
+divEl.children[0].children[0].children[1].appendChild(tdFour);
+divEl.children[0].children[0].children[1].children[1].innerHTML = 'd';
 // --- --- --- --- --- ---
 
 console.log(divEl.nodeName + ' (after)', divEl.cloneNode(true));
